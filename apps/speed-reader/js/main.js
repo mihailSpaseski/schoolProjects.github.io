@@ -21,9 +21,16 @@ speedSlider.addEventListener("input", () => {
 });
 
 function setButtonLabel() {
-  if (state === "running") startBtn.textContent = "Pause";
-  else if (state === "paused") startBtn.textContent = "Resume";
-  else startBtn.textContent = "Start";
+  if (state === "running") {
+    startBtn.textContent = "Pause";
+    textInput.style.display = "none"; // HIDE
+  } else if (state === "paused") {
+    startBtn.textContent = "Resume";
+    textInput.style.display = "block"; // SHOW
+  } else {
+    startBtn.textContent = "Start";
+    textInput.style.display = "block"; // SHOW
+  }
 }
 
 // Countdown before first start
@@ -85,13 +92,12 @@ startBtn.addEventListener("click", () => {
     clearInterval(countdownInterval);
     words = [];
     startCountdown();
-  }
-  else if (state === "running") {
+    textInput.style.display = "none";
+  } else if (state === "running") {
     state = "paused";
     clearTimeout(timeout);
     setButtonLabel();
-  }
-  else if (state === "paused") {
+  } else if (state === "paused") {
     state = "running";
     setButtonLabel();
     readNextWord();
