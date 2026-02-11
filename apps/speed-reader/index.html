@@ -10,33 +10,43 @@
 
 <body>
   <div class="container">
-    <h1>Word Speed Reader</h1>
-    
-    <div id="display">Ready. Your text will appear here.</div>
+    <select id="languageSelect" class="lang-select">
+      <option value="mk">Македонски</option>
+      <option value="en">English</option>
+      <option value="sq">Albanian</option>
+    </select>
 
-    <textarea id="textInput" placeholder="Paste or type text here..."></textarea>
+    <h1 data-i18n="title">Word Speed Reader</h1>
+
+    <div id="display" data-i18n="display">Ready. Your text will appear here.</div>
+
+    <textarea id="textInput" data-i18n-placeholder="textarea_placeholder"
+      placeholder="Paste or type text here..."></textarea>
 
     <div class="controls">
-      <label>
+      <label data-i18n="speed_label">
         Reading Speed
-        <span id="speedValue">300</span> WPM
       </label>
+      <span id="speedValue">300</span>
+      <p data-i18n="unit">WPM</p>
       <input type="range" id="speedSlider" min="50" max="1000" value="300">
     </div>
 
 
     <div class="buttons">
-      <button id="startBtn">Start</button>
-      <button id="stopBtn">Stop</button>
-      <button id="resetBtn">Reset</button>
+      <button id="startBtn" data-i18n="start">Start</button>
+      <button id="stopBtn" data-i18n="stop">Stop</button>
+      <button id="resetBtn" data-i18n="reset">Reset</button>
     </div>
 
     <div class="buttons">
-      <button id="returnHome"> <a href="../../index.html">Return Home</a> </button>
+      <button id="returnHome"> <a href="../../index.html" data-i18n="return_home">Return Home</a> </button>
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="./../../js/i18n.js"></script>
+  <script src="./../../js/main.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

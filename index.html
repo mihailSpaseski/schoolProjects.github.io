@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>School Apps</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
 
+<body>
   <div class="page">
+    <select id="languageSelect" class="lang-select">
+      <option value="en">English</option>
+      <option value="mk">Македонски</option>
+      <option value="sq">Albanian</option>
+    </select>
     <header>
-      <h1>📚 School Apps</h1>
-      <p>Select a tool to get started</p>
+      <h1 data-i18n="title_main">📚 School Apps</h1>
+      <p data-i18n="tool_select">Select a tool to get started</p>
     </header>
 
     <main class="app-grid">
       <a href="apps/speed-reader/index.html" class="app-card">
         <div class="icon">⚡</div>
-        <h2>Speed Reader</h2>
-        <p>Train your reading speed and focus</p>
+        <h2 data-i18n="app_speed_reader">Speed Reader</h2>
+        <p data-i18n="app_speed_reader_desc">Train your reading speed and focus</p>
       </a>
 
       <a href="#" class="app-card disabled">
         <div class="icon">🧮</div>
-        <h2>Math Solver</h2>
-        <p>Coming soon</p>
+        <h2 data-i18n="app_math_solver">Math Solver</h2>
+        <p data-i18n="coming_soon">Coming soon</p>
       </a>
     </main>
 
   </div>
-
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

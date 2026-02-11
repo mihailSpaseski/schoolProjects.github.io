@@ -22,13 +22,16 @@ speedSlider.addEventListener("input", () => {
 
 function setButtonLabel() {
   if (state === "running") {
-    startBtn.textContent = "Pause";
+    // startBtn.textContent = "Pause";
+    startBtn.textContent = translations[currentLang].pause;
     textInput.style.display = "none"; // HIDE
   } else if (state === "paused") {
-    startBtn.textContent = "Resume";
+    // startBtn.textContent = "Resume";
+    startBtn.textContent = translations[currentLang].resume;
     textInput.style.display = "block"; // SHOW
   } else {
-    startBtn.textContent = "Start";
+    // startBtn.textContent = "Start";
+    startBtn.textContent = translations[currentLang].start;
     textInput.style.display = "block"; // SHOW
   }
 }
@@ -74,7 +77,7 @@ function readNextWord() {
   if (state !== "running") return;
 
   if (currentIndex >= words.length) {
-    display.textContent = "Done";
+    display.textContent = translations[currentLang].done;
     state = "idle";
     setButtonLabel();
     return;
@@ -110,7 +113,7 @@ stopBtn.addEventListener("click", () => {
     state = "paused";
     clearTimeout(timeout);
     clearInterval(countdownInterval);
-    display.textContent = "Stopped";
+    display.textContent = translations[currentLang].stop;
     setButtonLabel();
   }
 });
@@ -122,7 +125,7 @@ resetBtn.addEventListener("click", () => {
   clearInterval(countdownInterval);
   currentIndex = 0;
   words = [];
-  display.textContent = "Ready";
+  display.textContent = translations[currentLang].ready;
   setButtonLabel();
 });
 
