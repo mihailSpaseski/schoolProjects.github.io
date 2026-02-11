@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Apps</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <h1>Hello World</h1>
-  <img src="assets/images/logo.png" alt="Logo">
+  <div class="page">
+    <header>
+      <h1>📚 School Apps</h1>
+      <p>Select a tool to get started</p>
+    </header>
 
-  <script src="js/main.js"></script>
+    <main class="app-grid">
+      <a href="apps/speed-reader/index.html" class="app-card">
+        <div class="icon">⚡</div>
+        <h2>Speed Reader</h2>
+        <p>Train your reading speed and focus</p>
+      </a>
+
+      <a href="#" class="app-card disabled">
+        <div class="icon">🧮</div>
+        <h2>Math Solver</h2>
+        <p>Coming soon</p>
+      </a>
+    </main>
+
+    <footer>
+      <p>© 2026 School Tools</p>
+    </footer>
+  </div>
+
 </body>
 </html>
