@@ -14,7 +14,6 @@ body {
   color: #fff;
 }
 
-/* Main Glass Container */
 .container {
   width: 90%;
   max-width: 750px;
@@ -27,13 +26,11 @@ body {
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
 }
 
-/* Title */
 h1 {
   margin-bottom: 20px;
   font-size: 32px;
 }
 
-/* Text Input */
 textarea {
   width: 100%;
   height: 120px;
@@ -51,7 +48,6 @@ textarea::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Speed Control Glass Panel */
 .controls {
   margin: 15px 0;
   padding: 18px;
@@ -60,7 +56,6 @@ textarea::placeholder {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Speed Label */
 .controls label {
   display: block;
   margin-bottom: 12px;
@@ -74,7 +69,6 @@ textarea::placeholder {
   color: #6dd5fa;
 }
 
-/* Modern Slider */
 input[type="range"] {
   width: 100%;
   height: 8px;
@@ -103,7 +97,6 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
 }
 
-/* Buttons */
 .buttons {
   margin: 20px 0;
 }
@@ -126,7 +119,6 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* Word Display */
 #display {
   margin-top: 25px;
   font-size: 56px;
@@ -150,18 +142,15 @@ button:hover {
   transition: all 0.2s ease;
 }
 
-/* Hover effect */
 .lang-select:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Focus glow */
 .lang-select:focus {
   border-color: #6dd5fa;
   box-shadow: 0 0 8px rgba(109, 213, 250, 0.5);
 }
 
-/* Dropdown options (limited styling support) */
 .lang-select option {
   background: #1e3c72;
   color: white;

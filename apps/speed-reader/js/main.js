@@ -12,31 +12,25 @@ let currentIndex = 0;
 let timeout = null;
 let countdownInterval = null;
 
-// STATES: "idle" | "countdown" | "running" | "paused"
 let state = "idle";
 
-// Live WPM label
 speedSlider.addEventListener("input", () => {
   speedValue.textContent = speedSlider.value;
 });
 
 function setButtonLabel() {
   if (state === "running") {
-    // startBtn.textContent = "Pause";
     startBtn.textContent = translations[currentLang].pause;
-    textInput.style.display = "none"; // HIDE
+    textInput.style.display = "none"; 
   } else if (state === "paused") {
-    // startBtn.textContent = "Resume";
     startBtn.textContent = translations[currentLang].resume;
-    textInput.style.display = "block"; // SHOW
+    textInput.style.display = "block"; 
   } else {
-    // startBtn.textContent = "Start";
     startBtn.textContent = translations[currentLang].start;
-    textInput.style.display = "block"; // SHOW
+    textInput.style.display = "block"; 
   }
 }
 
-// Countdown before first start
 function startCountdown() {
   state = "countdown";
   setButtonLabel();
@@ -72,7 +66,6 @@ function beginReading() {
   readNextWord();
 }
 
-// Dynamic-speed loop
 function readNextWord() {
   if (state !== "running") return;
 
@@ -88,7 +81,6 @@ function readNextWord() {
   timeout = setTimeout(readNextWord, delay);
 }
 
-// START / PAUSE / RESUME button
 startBtn.addEventListener("click", () => {
   if (state === "idle") {
     clearTimeout(timeout);
@@ -107,7 +99,6 @@ startBtn.addEventListener("click", () => {
   }
 });
 
-// STOP = stop but keep position
 stopBtn.addEventListener("click", () => {
   if (state === "running" || state === "paused") {
     state = "paused";
@@ -118,7 +109,6 @@ stopBtn.addEventListener("click", () => {
   }
 });
 
-// RESET = full reset
 resetBtn.addEventListener("click", () => {
   state = "idle";
   clearTimeout(timeout);
@@ -129,5 +119,4 @@ resetBtn.addEventListener("click", () => {
   setButtonLabel();
 });
 
-// Init
 setButtonLabel();
